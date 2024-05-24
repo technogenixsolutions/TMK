@@ -9,9 +9,17 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet" />
 
-    <link
+    <script
+      src="https://kit.fontawesome.com/53025ffb8e.js"
+      crossorigin="anonymous"></script>
+
+      <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="home.css">
+      
     <style>
       .hidden-menu {
         transform: translateX(-100%);
@@ -26,45 +34,49 @@
   <body class="bg-gray-100">
     <!-- Top bar -->
     <header class="bg-green-700 p-2 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-4 ">
         <a
           href="mailto:info@tmkhb.com"
-          class="text-white flex items-center space-x-2">
+          class="text-white hidden md:block space-x-2">
           <span>INQUIRY</span>
         </a>
-        <i class="fa fa-phone"></i>
+        <i class="fa fa-phone hidden md:block"></i>
         <a
           href="tel:+86 18014230998"
-          class="text-white flex items-center space-x-2">
+          class="text-white hidden md:block space-x-2">
           <span>+86 18014230998</span>
         </a>
       </div>
       <div class="flex items-center space-x-4">
         <!-- Social media icons -->
-        <a href="" target="_blank" class="text-white"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-tiktok"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-pinterest"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-youtube"></i
-        ></a>
+        <div class="md:block hidden">
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-pinterest"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
         <!-- Flags -->
-        <img src="path/to/flag1.png" alt="Flag 1" class="w-4 h-4" />
-        <img src="path/to/flag2.png" alt="Flag 2" class="w-4 h-4" />
+        <div class="flex items-center space-x-4">
+          <img src="path/to/flag1.png" alt="Flag 1" class="w-4 h-4" />
+          <img src="path/to/flag2.png" alt="Flag 2" class="w-4 h-4" />
+        </div>
         <!-- Add more flags as needed -->
       </div>
     </header>
@@ -72,19 +84,20 @@
     <!-- Main navbar -->
     <nav class="bg-white shadow-md">
       <div class="container flex justify-between items-center p-4">
-        <div class="text-red-600 text-2xl font-bold text-center">
+        <div
+          class="text-red-600 md:block hidden text-2xl font-bold text-center">
           <a href="#">TMK</a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
-          <a href="#" class="text-gray-700 hover:text-red-600">HOME</a>
+          <a href="index.html" class="text-gray-700 hover:text-red-600">HOME</a>
           <div class="relative group">
             <a
-              href="#"
+              href="products.html"
               class="text-gray-700 hover:text-red-600 flex items-center">
               PRODUCTS <i class="fa-solid fa-arrow-down"></i>
             </a>
             <div
-              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
               <a
                 href="#"
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -108,24 +121,35 @@
           <a href="#" class="text-gray-700 hover:text-red-600">FAQ</a>
           <a href="#" class="text-gray-700 hover:text-red-600">ABOUT US</a>
           <a href="#" class="text-gray-700 hover:text-red-600">NEWS</a>
-          <a href="#" class="text-gray-700 hover:text-red-600">CONTACT US</a>
+          <a href="contact.html" class="text-gray-700 hover:text-red-600">CONTACT US</a>
         </div>
-        <div class="md:hidden flex items-center space-x-2">
-          <button
-            id="mobile-menu-button"
-            class="text-gray-700 focus:outline-none">
-            <i class="fas fa-bars"></i>
-          </button>
-          <button
-            id="mobile-search-button"
-            class="text-gray-700 focus:outline-none">
-            <i class="fas fa-search"></i>
-          </button>
+        <div
+          class="md:hidden flex justify-between items-center space-x-2 w-full">
+          <div>
+            <button
+              id="mobile-search-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="text-red-600 md:hidden text-2xl font-bold text-center">
+            <a href="#">TMK</a>
+          </div>
+
+          <div class="float-right">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="fixed inset-0 bg-white z-50 p-4 hidden-menu">
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white z-50 p-4 hidden-menu w-[300px]">
         <div class="flex justify-between items-center mb-4">
           <input
             type="text"
@@ -169,17 +193,680 @@
       </div>
     </nav>
 
- 
+
+
+      <!-- Swiper -->
+      <div class="swiper banner_swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <div class="relative slider_container">
+                  <img
+                    src="image/home-slider-img/Ccompost-Banner-01.jpg"
+                    alt=""
+                    class=""
+                  />
+                  <div class="bg-overlay"></div>
+                  <div class="absolute inset-0 flex flex-col items-center justify-center lg:p-4 p-1 slider_home_banner_dec">
+                    <h2 class="lg:text-4xl text-2xl font-extrabold leading-none text-center text-white">
+                      24-HOUR COMPOSTING MACHINE
+                    </h2>
+                    <p class="mt-4 lg:text-normal text-base text-center text-white mb-4">
+                      TMK develops innovative food waste equipment solutions for home,
+                      commercial or industrial kitchens by turning food waste into
+                      compost in just 24 hours.
+                    </p>
+                    <button class="slide_btn">LEARN MORE +</button>
+                  </div>
+                </div>
+                
+          </div>
+          <div class="swiper-slide">
+              <div class="relative slider_container">
+                  <img
+                    src="image/home-slider-img/Ccompost-Banner-02.jpg"
+                    alt=""
+                    class=""
+                  />
+                  <div class="bg-overlay"></div>
+                  <div class="absolute inset-0 flex flex-col items-center justify-center lg:p-4 p-1 slider_home_banner_dec">
+                    <h2 class="lg:text-4xl text-2xl font-extrabold leading-none text-center text-white">
+                      24-HOUR COMPOSTING MACHINE
+                    </h2>
+                    <p class="mt-4 lg:text-normal text-base text-center text-white mb-4">
+                      TMK develops innovative food waste equipment solutions for home,
+                      commercial or industrial kitchens by turning food waste into
+                      compost in just 24 hours.
+                    </p>
+                    <button class="slide_btn">LEARN MORE +</button>
+                  </div>
+                </div>
+                
+          </div>
+          <div class="swiper-slide">
+              <div class="relative slider_container">
+                  <img
+                    src="image/home-slider-img/Ccompost-Banner-03.jpg"
+                    alt=""
+                    class=""
+                  />
+                  <div class="bg-overlay"></div>
+                  <div class="absolute inset-0 flex flex-col items-center justify-center lg:p-4 p-1 slider_home_banner_dec">
+                    <h2 class="lg:text-4xl text-2xl font-extrabold leading-none text-center text-white">
+                      24-HOUR COMPOSTING MACHINE
+                    </h2>
+                    <p class="mt-4 lg:text-normal text-base text-center text-white mb-4">
+                      TMK develops innovative food waste equipment solutions for home,
+                      commercial or industrial kitchens by turning food waste into
+                      compost in just 24 hours.
+                    </p>
+                    <button class="slide_btn">LEARN MORE +</button>
+                  </div>
+                </div>
+                
+          </div>
+        </div>
+        <div class="swiper-button-next next_prev_icon"></div>
+        <div class="swiper-button-prev next_prev_icon"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+  
+      <!-- banner photo  -->
+      <div class="banner_photo_area">
+        <div class="banner_photo_conatiner">
+          <div class="banner_photo">
+            <img src="image/home-slider-img/composting-01.jpg" alt="" />
+          </div>
+          <div class="banner_photo">
+            <img src="image/home-slider-img/composting-02.jpg" alt="" />
+          </div>
+          <div class="banner_photo">
+            <img src="image/home-slider-img/composting-03.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- ABOUT TMK  -->
+  
+      <div class="about_section-aera mt-8">
+        <div
+          class="lg:w-[1040px] w-full mx-auto px-4 flex lg:flex-row flex-col items-center justify-center gap-[30px]"
+        >
+          <div class="lg:w-[62%] w-full">
+            <h4
+              class="text-gray-500 font-sans font-semibold text-shadow-sm text-2xl text-center mb-3"
+            >
+              ABOUT TMK
+            </h4>
+  
+            <div class="flex items-center justify-center my-[36px]">
+              <ul class="flex items-center gap-1">
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+                <li class="about_bar"></li>
+              </ul>
+            </div>
+  
+            <div class="">
+              <p class="text-[#7A7A7A]">
+                The idea of effectively managing waste has been practiced from
+                time immemorial, though, has lost participation from people owing
+                to it being a painstaking process. Your organic house waste shall
+                no longer turn into unhygienic, foul-smelling, hazardous matter
+                polluting the MOTHER EARTH. TMK has come up with a unique solution
+                by formulating an organic composting machine that enables users to
+                convert organic waste into extremely effective bio-fertilizers and
+                planting media. TMK is a waste management social enterprise that
+                is moving the organic waste sector to models that are
+                simultaneously, environmentally, and financially sustainable. We
+                offer professional waste management and processing services to
+                household Community composting for Residential apartments and
+                Institutional clients like Schools, Colleges, Offices, Hotels,
+                Restaurants, Canteens, Factories, etc.
+              </p>
+              <button
+                class="inline-block leading-none bg-[#079244] text-base text-white p-3 px-6 rounded-sm text-center transition-all duration-300 mt-8"
+              >
+                DOWNLOAD BROCHURE
+              </button>
+            </div>
+          </div>
+          <div class="lg:w-[34%] w-full lg:mt-0 mt-4">
+            <img
+              class="w-full h-full object-fit"
+              src="image/about/About-TMK-300x286.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+  
+      <!-- COMPOSTING SOLUTIONS -->
+      <div class="solutions_ara_start mt-12">
+        <div>
+          <h4 class="text-[#54595F] text-[30px] font-semibold text-center">
+            <span>COMPOSTING</span>
+            <span class="header_line">
+              <span>SOLUTIONS</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 150"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7"
+                ></path>
+              </svg>
+            </span>
+          </h4>
+        </div>
+  
+        <div class="two_img_banner_area mt-10">
+          <div
+            class="flex lg:flex-row flex-col items-center justify-between gap-6 px-3"
+          >
+            <div
+              class="two_img_banner_conatainer relative w-full overflow-hidden"
+            >
+              <img
+                src="image/home-slider-img/household-composting-02.jpg"
+                alt="Composting Image"
+                class="zoom-image w-full"
+              />
+              <div class="bg-overlay"></div>
+              <!-- Overlay color div -->
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center text-white text-center"
+              >
+                <h2 class="lg:text-2xl text-lg font-semibold">
+                  HOUSEHOLD COMPOSTING
+                </h2>
+                <p class="lg:text-lg text-base mt-2">
+                  An amazing addition to your home or office kitchen. The food
+                  waste is processed without odor into a beneficial compost for
+                  your plants.
+                </p>
+                <button class="slide_btn mt-4">Learn More</button>
+              </div>
+            </div>
+            <div
+              class="two_img_banner_conatainer relative w-full overflow-hidden"
+            >
+              <img
+                src="image/home-slider-img/commercial-composting.jpg"
+                alt="Composting Image"
+                class="zoom-image w-full"
+              />
+              <div class="bg-overlay"></div>
+              <!-- Overlay color div -->
+              <div
+                class="absolute inset-0 flex flex-col items-center justify-center text-white text-center"
+              >
+                <h2 class="lg:text-2xl text-lg font-semibold">
+                  HOUSEHOLD COMPOSTING
+                </h2>
+                <p class="lg:text-lg text-base mt-2">
+                  An amazing addition to your home or office kitchen. The food
+                  waste is processed without odor into a beneficial compost for
+                  your plants.
+                </p>
+                <button class="slide_btn mt-4">Learn More</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- TMK COMPOSTERS arar start  -->
+  
+      <div class="tmk_composters_area mt-12">
+        <div>
+          <h4 class="text-[#54595F] text-[30px] font-semibold text-center">
+            <span>TMK </span>
+            <span class="header_line">
+              <span>COMPOSTERS</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 150"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7"
+                ></path>
+              </svg>
+            </span>
+          </h4>
+          <div class="lg:w-[1030px] mx-auto w-full mt-10 mb-10">
+            <p class="text-center text-[#7A7A7A] px-3">
+              TMK is China’s leading organic waste composter machine provider. Our
+              success is driven by our people and their passion to contribute to
+              environmentally sound business solutions by transforming waste into
+              something useful.
+            </p>
+          </div>
+        </div>
+  
+        <!-- product slider  -->
+        <div class="swiper home_product_slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="text-center cursor-pointer">
+                <img
+                  src="image/home-slider-img/TMK-1-Food-Disposer-06.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-1</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-2-Composter-3.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-2</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-100-Composter-01.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-100</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-1000-Composter-1.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-1000</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img src="image/home-slider-img/TMK-30-1 (1).jpg" alt="img_1" />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-30</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-300-Composter.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-300</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-5-Composter-2.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-5</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-500-Composter-1-1.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-500</a
+                >
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="text-center">
+                <img
+                  src="image/home-slider-img/TMK-5000-Composter-1-1.jpg"
+                  alt="img_1"
+                />
+                <a
+                  href="#"
+                  class="font-semibold text-[#7A7A7A] hover:text-[#61CE70] cursor-pointer pt-3"
+                  >TMK-5000</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next next_prev_icon"></div>
+          <div class="swiper-button-prev next_prev_icon"></div>
+          <!-- <div class="swiper-pagination home_product_pagination_icon"></div> -->
+        </div>
+      </div>
+  
+      <!-- WASTE COMPOSTING PROCESS start -->
+      <div class="waste_composing_process_area mt-12">
+        <div>
+          <h4 class="text-[#54595F] text-[30px] font-semibold text-center">
+            <span>WASTE COMPOSTING </span>
+            <span class="header_line">
+              <span>PROCESS</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 150"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7"
+                ></path>
+              </svg>
+            </span>
+          </h4>
+          <div class="lg:w-[1030px] mx-auto w-full mt-10 mb-10">
+            <p class="text-center text-[#7A7A7A] px-3">
+              Processes all types of Organic & Horticulture Waste in Four Basic
+              Steps
+            </p>
+          </div>
+        </div>
+  
+        <!-- img  ara -->
+        <div class="w-full h-full">
+          <img
+            class="w-full h-full object-fit"
+            src="image/home-slider-img/composting-waste-processing-1536x351.jpg"
+            alt=""
+          />
+        </div>
+  
+        <!-- KNOW MORE > button  -->
+        <div class="text-center mt-4 mb-4">
+          <a
+            href="#"
+            class="inline-block leading-none bg-[#079244] text-base text-white p-3 px-6 rounded-sm text-center transition-all duration-300 mt-8"
+          >
+            KNOW MORE >
+          </a>
+        </div>
+  
+        <!-- testomonial section start  -->
+        <div>
+          <!-- Swiper -->
+          <div class="swiper testomonial_swiper mt-12">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
+                  <div
+                    class="lg:w-[940px] px-3 w-full flex items-center flex-col justify-center"
+                  >
+                    <h4 class="text-center">
+                      "TMK food waste composting machine is best for factory for
+                      processing of leftover food waste, Very much satisfied with
+                      the qualitu of the product."
+                    </h4>
+                    <!-- testomnial profile  -->
+                    <div class="flex items-center gap-4 mt-8">
+                      <div class="w-[50px] h-[50px]">
+                        <img
+                          class="w-full h-full object-cover rounded-full"
+                          src="image/home-slider-img/Michale.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h3 class="text-[#7A7A7A] text-sm capli font-semibold">
+                          Michale
+                        </h3>
+                        <p class="text-[#079244]">Technical Engineer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
+                  <div
+                    class="lg:w-[940px] px-3 w-full flex items-center flex-col justify-center"
+                  >
+                    <h4 class="text-center">
+                      "TMK food waste composting machine is best for factory for
+                      processing of leftover food waste, Very much satisfied with
+                      the qualitu of the product."
+                    </h4>
+                    <!-- testomnial profile  -->
+                    <div class="flex items-center gap-4 mt-8">
+                      <div class="w-[50px] h-[50px]">
+                        <img
+                          class="w-full h-full object-cover rounded-full"
+                          src="image/home-slider-img/LeBlanc_John.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h3 class="text-[#7A7A7A] text-sm capli font-semibold">
+                          Michale
+                        </h3>
+                        <p class="text-[#079244]">Technical Engineer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="flex items-center justify-center">
+                  <div
+                    class="lg:w-[940px] px-3 w-full flex items-center flex-col justify-center"
+                  >
+                    <h4 class="text-center">
+                      "TMK food waste composting machine is best for factory for
+                      processing of leftover food waste, Very much satisfied with
+                      the qualitu of the product."
+                    </h4>
+                    <!-- testomnial profile  -->
+                    <div class="flex items-center gap-4 mt-8">
+                      <div class="w-[50px] h-[50px]">
+                        <img
+                          class="w-full h-full object-cover rounded-full"
+                          src="image/home-slider-img/livia.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h3 class="text-[#7A7A7A] text-sm capli font-semibold">
+                          Michale
+                        </h3>
+                        <p class="text-[#079244]">Technical Engineer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="bg-[#079244] mt-12 w-full lg:h-[90px] h-full py-2 flex items-center">
+        <div href="#" class="lg:w-[1140px] w-full px-3 mx-auto">
+          <div class="flex items-center lg:flex-row flex-col justify-between">
+            <h2 class="text-white text-2xl font-semibold lg:text-normal text-center">
+              Let's talk about what we can build together
+            </h2>
+            <button
+              href=""
+              class="lg:mt-0 mt-3 inline-block leading-none bg-[#ffffff] text-[15px] text-bkacj p-3 px-6 rounded-sm text-center"
+            >
+              CONTACT US →
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- blog card start  -->
+  
+      <div class="blog_card_section_area mt-12 mb-8">
+        <div>
+          <h4 class="text-[#54595F] text-[30px] font-semibold text-center">
+            <span>LASTEST </span>
+            <span class="header_line">
+              <span>NEWS</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 500 150"
+                preserveAspectRatio="none"
+              >
+                <path
+                  d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7"
+                ></path>
+              </svg>
+            </span>
+          </h4>
+        </div>
+  
+        <!-- blog card section  -->
+        <div class="lg:w-[1050px] w-full mx-auto mt-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="blog_card relative">
+              <div class="relative">
+                <img
+                  src="image/home-slider-img/blog_1.jpg"
+                  alt=""
+                  class="w-full h-auto"
+                />
+                <div class="absolute top-0 right-0 m-2">
+                  <h5
+                    class="bg-[#079244] text-white text-xs p-2.5 px-5 leading-none font-normal rounded-full"
+                  >
+                    COMPOSTER-NEWS
+                  </h5>
+                </div>
+              </div>
+              <div class="blog_card_des px-[30px] py-[30px]">
+                <a href="#" class="text-[21px] text-[#54595F] font-semibold">
+                  Organic Waste Composter: A Sustainable Solution for Food Scraps
+                  and Yard Waste
+                </a>
+  
+                <p class="leading-[1.5em] text-base text-[14px] text-gray-700 py-[25px]">What is an Organic Waste Composter?   An organic waste composter is a device that turns your food waste into compost faster. If you’re already</p>
+  
+                <a href="#" class="text-[#079244] text-[12px] pb-[30px]">
+                  READ MORE »
+                </a>
+              </div>
+  
+              <div class="mb-0 border-t border-gray-300 bottom-0 left-0 mt-20px">
+                  <p class="py-4 px-8 leading-[1.3em] text-xs mb-3 text-gray-500">May 21, 2024</p>
+              </div>
+            </div>
+            <div class="blog_card relative">
+              <div class="relative">
+                <img
+                  src="image/home-slider-img/blog_3.jpg"
+                  alt=""
+                  class="w-full h-auto"
+                />
+                <div class="absolute top-0 right-0 m-2">
+                  <h5
+                    class="bg-[#079244] text-white text-xs p-2.5 px-5 leading-none font-normal rounded-full"
+                  >
+                    COMPOSTER-NEWS
+                  </h5>
+                </div>
+              </div>
+              <div class="blog_card_des px-[30px] py-[30px]">
+                <a href="#" class="text-[21px] text-[#54595F] font-semibold">
+                  Organic Waste Composter: A Sustainable Solution for Food Scraps
+                  and Yard Waste
+                </a>
+  
+                <p class="leading-[1.5em] text-base text-[14px] text-gray-700 py-[25px]">What is an Organic Waste Composter?   An organic waste composter is a device that turns your food waste into compost faster. If you’re already</p>
+  
+                <a href="#" class="text-[#079244] text-[12px] pb-[30px]">
+                  READ MORE »
+                </a>
+              </div>
+  
+              <div class="mb-0 border-t border-gray-300 bottom-0 left-0 mt-20px">
+                  <p class="py-4 px-8 leading-[1.3em] text-xs mb-3 text-gray-500">May 21, 2024</p>
+              </div>
+            </div>
+            <div class="blog_card relative">
+              <div class="relative">
+                <img
+                  src="image/home-slider-img/blog_3.jpg"
+                  alt=""
+                  class="w-full h-auto"
+                />
+                <div class="absolute top-0 right-0 m-2">
+                  <h5
+                    class="bg-[#079244] text-white text-xs p-2.5 px-5 leading-none font-normal rounded-full"
+                  >
+                    COMPOSTER-NEWS
+                  </h5>
+                </div>
+              </div>
+              <div class="blog_card_des px-[30px] py-[30px]">
+                <a href="#" class="text-[21px] text-[#54595F] font-semibold">
+                  Organic Waste Composter: A Sustainable Solution for Food Scraps
+                  and Yard Waste
+                </a>
+  
+                <p class="leading-[1.5em] text-base text-[14px] text-gray-700 py-[25px]">What is an Organic Waste Composter?   An organic waste composter is a device that turns your food waste into compost faster. If you’re already</p>
+  
+                <a href="#" class="text-[#079244] text-[12px] pb-[30px]">
+                  READ MORE »
+                </a>
+              </div>
+  
+              <div class="mb-0 border-t border-gray-300 bottom-0 left-0 mt-20px">
+                  <p class="py-4 px-8 leading-[1.3em] text-xs mb-3 text-gray-500">May 21, 2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
     <footer class="bg-gray-100 text-gray-700 py-6">
       <div class="container mx-auto px-4 lg:px-8">
         <div
           class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
-          <div class="flex flex-col items-start">
-            <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
-            <p class="text-sm">
-              &copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD
-            </p>
-          </div>
+          <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
           <div
             class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 w-full lg:w-auto">
             <div>
@@ -240,9 +927,85 @@
           </div>
         </div>
       </div>
+
+      <div class="bg-gray-300 py-3">
+        <p class="text-sm">&copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD</p>
+      </div>
     </footer>
 
+
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
     <script>
+      // Swiper instance for .mySwiper
+      var swiper1 = new Swiper(".banner_swiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".mySwiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".mySwiper-button-next",
+          prevEl: ".mySwiper-button-prev",
+        },
+      });
+
+      // Swiper instance for .home_product_slider
+      var swiper2 = new Swiper(".home_product_slider", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".home_product_pagination_icon",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".home_product-button-next",
+          prevEl: ".home_product-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        },
+      });
+
+      // Swiper instance for .testomonial_swiper
+      var swiper3 = new Swiper(".testomonial_swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        keyboard: {
+          enabled: true,
+        },
+        pagination: {
+          el: ".testomonial-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".testomonial-button-next",
+          prevEl: ".testomonial-button-prev",
+        },
+      });
+
       document
         .getElementById("mobile-menu-button")
         .addEventListener("click", function () {
@@ -250,5 +1013,7 @@
           menu.classList.toggle("hidden-menu");
         });
     </script>
+
+
   </body>
 </html>
