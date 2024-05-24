@@ -6,6 +6,10 @@
     <title>Responsive Navbar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
@@ -38,11 +42,11 @@
       <div class="flex items-center space-x-4">
         <!-- Social media icons -->
         <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-facebook"></i
+          ><i class="fa-brands fa-facebook"></i
         ></a>
         <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-instagram"></i
-        ></a>
+          ><i class="fa-brands fa-instagram"></i>
+        </a>
         <a href="" target="_blank" class="text-white"
           ><i class="fab fa-tiktok"></i
         ></a>
@@ -67,8 +71,8 @@
 
     <!-- Main navbar -->
     <nav class="bg-white shadow-md">
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <div class="text-red-600 text-2xl font-bold">
+      <div class="container flex justify-between items-center p-4">
+        <div class="text-red-600 text-2xl font-bold text-center">
           <a href="#">TMK</a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
@@ -80,7 +84,7 @@
               PRODUCTS <i class="fa-solid fa-arrow-down"></i>
             </a>
             <div
-              class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
               <a
                 href="#"
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -164,21 +168,88 @@
         </div>
       </div>
     </nav>
+    <div>helllo</div>
+    <!-- footer 
+     -->
 
-
-    
-
-
-
-
+    <footer class="bg-gray-100 text-gray-700 py-6">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
+          <div class="flex flex-col items-start">
+            <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
+            <p class="text-sm">
+              &copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD
+            </p>
+          </div>
+          <div
+            class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 w-full lg:w-auto">
+            <div>
+              <h2 class="font-bold mb-2">MENU</h2>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#" class="hover:underline">Products</a></li>
+                <li>
+                  <a href="#" class="hover:underline ml-4">Food Composter</a>
+                </li>
+                <li><a href="#" class="hover:underline">FAQ</a></li>
+                <li><a href="#" class="hover:underline">About Us</a></li>
+                <li><a href="#" class="hover:underline">NEWS</a></li>
+                <li><a href="#" class="hover:underline">Contact Us</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="font-bold mb-2">PRODUCT CATEGORIES</h2>
+              <ul class="space-y-1">
+                <li>
+                  <a href="#" class="hover:underline">Commercial Composter</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline"
+                    >Environmental Equipment</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Household Composter</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="font-bold mb-2">CONTACT US</h2>
+              <ul class="space-y-1">
+                <li>
+                  Email:
+                  <a href="mailto:info@tmkhb.com" class="hover:underline"
+                    >info@tmkhb.com</a
+                  >
+                </li>
+                <li>
+                  WhatsApp:
+                  <a href="tel:+8618014230998" class="hover:underline"
+                    >+86 18014230998</a
+                  >
+                </li>
+                <li>
+                  Web:
+                  <a
+                    href="https://compostingsolution.com"
+                    class="hover:underline"
+                    >compostingsolution.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden-menu");
-        mobileMenu.classList.toggle("shown-menu");
-      });
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden-menu");
+        });
     </script>
   </body>
 </html>
