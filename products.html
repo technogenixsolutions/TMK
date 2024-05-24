@@ -3,19 +3,196 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/53025ffb8e.js"
+      crossorigin="anonymous"></script>
+
+      <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="home.css" />
+
+    <link rel="stylesheet" href="home.css">
+      
+    <style>
+      .hidden-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .shown-menu {
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-gray-100">
+    <!-- Top bar -->
+    <header class="bg-green-700 p-2 flex justify-between items-center">
+      <div class="flex items-center space-x-4 ">
+        <a
+          href="mailto:info@tmkhb.com"
+          class="text-white hidden md:block space-x-2">
+          <span>INQUIRY</span>
+        </a>
+        <i class="fa fa-phone hidden md:block"></i>
+        <a
+          href="tel:+86 18014230998"
+          class="text-white hidden md:block space-x-2">
+          <span>+86 18014230998</span>
+        </a>
+      </div>
+      <div class="flex items-center space-x-4">
+        <!-- Social media icons -->
+        <div class="md:block hidden">
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-pinterest"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <!-- Flags -->
+        <div class="flex items-center space-x-4">
+          <img src="path/to/flag1.png" alt="Flag 1" class="w-4 h-4" />
+          <img src="path/to/flag2.png" alt="Flag 2" class="w-4 h-4" />
+        </div>
+        <!-- Add more flags as needed -->
+      </div>
+    </header>
+
+    <!-- Main navbar -->
+    <nav class="bg-white shadow-md">
+      <div class="container flex justify-between items-center p-4">
+        <div
+          class="text-red-600 md:block hidden text-2xl font-bold text-center">
+          <a href="#">TMK</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-red-600">HOME</a>
+          <div class="relative group">
+            <a
+              href="products.html"
+              class="text-gray-700 hover:text-red-600 flex items-center">
+              PRODUCTS <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <div
+              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Household Composter</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Commercial Composter</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Environmental Equipment</a
+              >
+            </div>
+          </div>
+          <a href="#" class="text-gray-700 hover:text-red-600"
+            >FOOD COMPOSTER</a
+          >
+          <a href="#" class="text-gray-700 hover:text-red-600">FAQ</a>
+          <a href="#" class="text-gray-700 hover:text-red-600">ABOUT US</a>
+          <a href="#" class="text-gray-700 hover:text-red-600">NEWS</a>
+          <a href="contact.html" class="text-gray-700 hover:text-red-600">CONTACT US</a>
+        </div>
+        <div
+          class="md:hidden flex justify-between items-center space-x-2 w-full">
+          <div>
+            <button
+              id="mobile-search-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="text-red-600 md:hidden text-2xl font-bold text-center">
+            <a href="#">TMK</a>
+          </div>
+
+          <div class="float-right">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white z-50 p-4 hidden-menu w-[300px]">
+        <div class="flex justify-between items-center mb-4">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="border rounded p-2 w-full mr-2" />
+          <button class="bg-green-700 text-white p-2 rounded">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >HOME</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >PRODUCTS</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >FOOD COMPOSTER</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >FAQ</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >ABOUT US</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >NEWS</a
+        >
+        <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+          >CONTACT US</a
+        >
+        <div class="flex justify-around mt-4">
+          <!-- Social media icons -->
+          <a href="#" class="text-gray-700"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-gray-700"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </nav>
+
 
 
     <div class="mt-20 w-full h-ull">
@@ -233,5 +410,160 @@
           </div>
       </div>
     </div>
+
+
+    <footer class="bg-gray-100 text-gray-700 py-6">
+      <div class="container mx-auto px-4 lg:px-8">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
+          <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
+          <div
+            class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 w-full lg:w-auto">
+            <div>
+              <h2 class="font-bold mb-2">MENU</h2>
+              <ul class="space-y-1">
+                <li><a href="#" class="hover:underline">Home</a></li>
+                <li><a href="#" class="hover:underline">Products</a></li>
+                <li>
+                  <a href="#" class="hover:underline ml-4">Food Composter</a>
+                </li>
+                <li><a href="#" class="hover:underline">FAQ</a></li>
+                <li><a href="#" class="hover:underline">About Us</a></li>
+                <li><a href="#" class="hover:underline">NEWS</a></li>
+                <li><a href="#" class="hover:underline">Contact Us</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="font-bold mb-2">PRODUCT CATEGORIES</h2>
+              <ul class="space-y-1">
+                <li>
+                  <a href="#" class="hover:underline">Commercial Composter</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline"
+                    >Environmental Equipment</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Household Composter</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="font-bold mb-2">CONTACT US</h2>
+              <ul class="space-y-1">
+                <li>
+                  Email:
+                  <a href="mailto:info@tmkhb.com" class="hover:underline"
+                    >info@tmkhb.com</a
+                  >
+                </li>
+                <li>
+                  WhatsApp:
+                  <a href="tel:+8618014230998" class="hover:underline"
+                    >+86 18014230998</a
+                  >
+                </li>
+                <li>
+                  Web:
+                  <a
+                    href="https://compostingsolution.com"
+                    class="hover:underline"
+                    >compostingsolution.com</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-300 py-3">
+        <p class="text-sm">&copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD</p>
+      </div>
+    </footer>
+
+
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      // Swiper instance for .mySwiper
+      var swiper1 = new Swiper(".banner_swiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".mySwiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".mySwiper-button-next",
+          prevEl: ".mySwiper-button-prev",
+        },
+      });
+
+      // Swiper instance for .home_product_slider
+      var swiper2 = new Swiper(".home_product_slider", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".home_product_pagination_icon",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".home_product-button-next",
+          prevEl: ".home_product-button-prev",
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 50,
+          },
+        },
+      });
+
+      // Swiper instance for .testomonial_swiper
+      var swiper3 = new Swiper(".testomonial_swiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        keyboard: {
+          enabled: true,
+        },
+        pagination: {
+          el: ".testomonial-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".testomonial-button-next",
+          prevEl: ".testomonial-button-prev",
+        },
+      });
+
+      document
+        .getElementById("mobile-menu-button")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden-menu");
+        });
+    </script>
+
+
   </body>
 </html>

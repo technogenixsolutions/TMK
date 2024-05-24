@@ -4,20 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Navbar</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/53025ffb8e.js"
+      crossorigin="anonymous"></script>
+
+      <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <link rel="stylesheet" href="/home.css">
-
-
-
+    <link rel="stylesheet" href="home.css">
+      
     <style>
       .hidden-menu {
         transform: translateX(-100%);
@@ -32,16 +34,16 @@
   <body class="bg-gray-100">
     <!-- Top bar -->
     <header class="bg-green-700 p-2 flex justify-between items-center">
-      <div class="flex items-center space-x-4 hidden md:block">
+      <div class="flex items-center space-x-4 ">
         <a
           href="mailto:info@tmkhb.com"
-          class="text-white flex items-center space-x-2">
+          class="text-white hidden md:block space-x-2">
           <span>INQUIRY</span>
         </a>
-        <i class="fa fa-phone"></i>
+        <i class="fa fa-phone hidden md:block"></i>
         <a
           href="tel:+86 18014230998"
-          class="text-white flex items-center space-x-2">
+          class="text-white hidden md:block space-x-2">
           <span>+86 18014230998</span>
         </a>
       </div>
@@ -87,15 +89,15 @@
           <a href="#">TMK</a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
-          <a href="#" class="text-gray-700 hover:text-red-600">HOME</a>
+          <a href="index.html" class="text-gray-700 hover:text-red-600">HOME</a>
           <div class="relative group">
             <a
-              href="#"
+              href="products.html"
               class="text-gray-700 hover:text-red-600 flex items-center">
               PRODUCTS <i class="fa-solid fa-arrow-down"></i>
             </a>
             <div
-              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+              class="absolute flex left-0 mt-2 w-[650px] bg-white border border-gray-200 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-50">
               <a
                 href="#"
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
@@ -119,7 +121,7 @@
           <a href="#" class="text-gray-700 hover:text-red-600">FAQ</a>
           <a href="#" class="text-gray-700 hover:text-red-600">ABOUT US</a>
           <a href="#" class="text-gray-700 hover:text-red-600">NEWS</a>
-          <a href="#" class="text-gray-700 hover:text-red-600">CONTACT US</a>
+          <a href="contact.html" class="text-gray-700 hover:text-red-600">CONTACT US</a>
         </div>
         <div
           class="md:hidden flex justify-between items-center space-x-2 w-full">
@@ -860,7 +862,7 @@
 
 
 
-    <footer class="bg-gray-100 text-gray-700 py-6 mt-[45%]">
+    <footer class="bg-gray-100 text-gray-700 py-6">
       <div class="container mx-auto px-4 lg:px-8">
         <div
           class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
