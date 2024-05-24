@@ -9,9 +9,9 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script
+      src="https://kit.fontawesome.com/53025ffb8e.js"
+      crossorigin="anonymous"></script>
     <style>
       .hidden-menu {
         transform: translateX(-100%);
@@ -26,7 +26,7 @@
   <body class="bg-gray-100">
     <!-- Top bar -->
     <header class="bg-green-700 p-2 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-4 hidden md:block">
         <a
           href="mailto:info@tmkhb.com"
           class="text-white flex items-center space-x-2">
@@ -41,30 +41,34 @@
       </div>
       <div class="flex items-center space-x-4">
         <!-- Social media icons -->
-        <a href="" target="_blank" class="text-white"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-tiktok"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-pinterest"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-linkedin"></i
-        ></a>
-        <a href="" target="_blank" class="text-white"
-          ><i class="fab fa-youtube"></i
-        ></a>
+        <div class="md:block hidden">
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-pinterest"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="" target="_blank" class="text-white"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
         <!-- Flags -->
-        <img src="path/to/flag1.png" alt="Flag 1" class="w-4 h-4" />
-        <img src="path/to/flag2.png" alt="Flag 2" class="w-4 h-4" />
+        <div class="flex items-center space-x-4">
+          <img src="path/to/flag1.png" alt="Flag 1" class="w-4 h-4" />
+          <img src="path/to/flag2.png" alt="Flag 2" class="w-4 h-4" />
+        </div>
         <!-- Add more flags as needed -->
       </div>
     </header>
@@ -72,7 +76,8 @@
     <!-- Main navbar -->
     <nav class="bg-white shadow-md">
       <div class="container flex justify-between items-center p-4">
-        <div class="text-red-600 text-2xl font-bold text-center">
+        <div
+          class="text-red-600 md:block hidden text-2xl font-bold text-center">
           <a href="#">TMK</a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
@@ -110,22 +115,33 @@
           <a href="#" class="text-gray-700 hover:text-red-600">NEWS</a>
           <a href="#" class="text-gray-700 hover:text-red-600">CONTACT US</a>
         </div>
-        <div class="md:hidden flex items-center space-x-2">
-          <button
-            id="mobile-menu-button"
-            class="text-gray-700 focus:outline-none">
-            <i class="fas fa-bars"></i>
-          </button>
-          <button
-            id="mobile-search-button"
-            class="text-gray-700 focus:outline-none">
-            <i class="fas fa-search"></i>
-          </button>
+        <div
+          class="md:hidden flex justify-between items-center space-x-2 w-full">
+          <div>
+            <button
+              id="mobile-search-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <div class="text-red-600 md:hidden text-2xl font-bold text-center">
+            <a href="#">TMK</a>
+          </div>
+
+          <div class="float-right">
+            <button
+              id="mobile-menu-button"
+              class="text-gray-700 focus:outline-none">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <!-- Mobile menu -->
-      <div id="mobile-menu" class="fixed inset-0 bg-white z-50 p-4 hidden-menu">
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 bg-white z-50 p-4 hidden-menu w-[300px]">
         <div class="flex justify-between items-center mb-4">
           <input
             type="text"
@@ -169,17 +185,11 @@
       </div>
     </nav>
 
- 
-    <footer class="bg-gray-100 text-gray-700 py-6">
+    <footer class="bg-gray-100 text-gray-700 py-6 mt-[45%]">
       <div class="container mx-auto px-4 lg:px-8">
         <div
           class="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
-          <div class="flex flex-col items-start">
-            <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
-            <p class="text-sm">
-              &copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD
-            </p>
-          </div>
+          <h1 class="text-red-600 text-2xl font-bold mb-4">TMK</h1>
           <div
             class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-12 w-full lg:w-auto">
             <div>
@@ -239,6 +249,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="bg-gray-300 py-3">
+        <p class="text-sm">&copy; 2024 TOPMAKE ENVIRONMENT GROUP CO., LTD</p>
       </div>
     </footer>
 
